@@ -1,0 +1,414 @@
+/* Reset en Basisstijlen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: #f0f8ff; /* Pastelkleurige achtergrond */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Header Stijlen */
+header {
+  background-color: #fff;
+  padding: 10px 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+}
+
+.header-center {
+  flex: 1;
+  justify-content: center;
+}
+
+#live-time {
+  font-size: 1em;
+  color: #333;
+  font-weight: bold;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-label {
+  font-size: 0.8em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Emoji Deck Stijlen */
+#emoji-deck {
+  background-color: transparent;
+  padding: 0;
+  width: 100%;
+  z-index: 900;
+  position: relative;
+  margin-top: 70px; /* Uitlijnen met de header */
+}
+
+.deck-body {
+  max-height: 150px; /* Verlaagd van 200px naar 150px */
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Emoji Grid */
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px; /* Verminderd van 8px naar 4px */
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.emoji-item {
+  width: 35px; /* Verminderd van 40px naar 35px */
+  height: 35px; /* Verminderd van 40px naar 35px */
+  font-size: 1.2em; /* Verminderd voor betere pasvorm */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.emoji-item:active {
+  transform: scale(1.1);
+}
+
+/* Navigatieknoppen */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px; /* Verminderd van 10px naar 5px */
+  gap: 10px; /* Verminderd van 20px naar 10px */
+}
+
+.nav-button {
+  background-color: #d3eaff;
+  border: none;
+  font-size: 1.2em; /* Verminderd voor consistentie */
+  cursor: pointer;
+  color: #333;
+  width: 35px; /* Verminderd van 40px naar 35px */
+  height: 35px; /* Verminderd van 40px naar 35px */
+  border-radius: 5px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #a0c4ff;
+  transform: scale(1.05);
+}
+
+#category-name {
+  font-size: 0.9em; /* Verminderd voor betere pasvorm */
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hoofdinhoud Stijlen */
+main {
+  padding-top: 220px; /* Verminderd van 250px naar 220px */
+  padding-bottom: 10px; /* Verminderd van 20px naar 10px */
+}
+
+.sectors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Verminderd van 20px naar 10px */
+  padding: 0 10px; /* Verminderd van 15px naar 10px */
+}
+
+.sector {
+  background-color: #e6f7ff;
+  border: 1px solid #b3daff;
+  border-radius: 10px;
+  padding: 5px; /* Verminderd van 10px naar 5px */
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.3s;
+}
+
+.sector:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sector-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* Verminderd van 10px naar 5px */
+  position: relative;
+}
+
+.sector-header h2 {
+  font-size: 1em; /* Verminderd voor betere pasvorm */
+  color: #333;
+  font-weight: bold;
+}
+
+.check-button {
+  background: none;
+  border: none;
+  font-size: 1.2em; /* Verminderd van 1.5em naar 1.2em */
+  cursor: pointer;
+  color: gray;
+  position: absolute;
+  right: 0;
+  transition: color 0.3s;
+}
+
+.check-button:hover {
+  color: #4CAF50;
+}
+
+.check-button.checked {
+  color: #4CAF50;
+}
+
+.emoji-placeholders {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* Verminderd van 10px naar 5px */
+  flex-wrap: wrap;
+}
+
+.emoji-placeholder {
+  width: 45px; /* Verminderd van 50px naar 45px */
+  height: 45px; /* Verminderd van 50px naar 45px */
+  background-color: #fff;
+  border: 2px dashed #b3daff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em; /* Verminderd voor betere pasvorm */
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.emoji-placeholder.highlight {
+  background-color: #d3eaff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.emoji-placeholder.magnet-active {
+  background-color: #cce5ff;
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Footer Stijlen */
+footer {
+  margin-top: 10px; /* Verminderd van 20px naar 10px */
+  padding: 0 10px 10px; /* Verminderd van 20px naar 10px */
+  text-align: center;
+}
+
+/* Aangepaste Tekstinvoervelden */
+.custom-text-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Verminderd van 10px naar 5px */
+  margin-bottom: 10px; /* Verminderd van 20px naar 10px */
+}
+
+.custom-text-inputs input {
+  padding: 8px; /* Verminderd van 10px naar 8px */
+  font-size: 0.9em; /* Verminderd voor betere pasvorm */
+  border: 1px solid #b3daff;
+  border-radius: 10px;
+  outline: none;
+  width: 100%;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-text-inputs input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.custom-text-inputs input::placeholder {
+  color: #999;
+}
+
+/* Dag Beoordelingssysteem */
+.day-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px; /* Verminderd van 20px naar 10px */
+}
+
+.rating-circle {
+  width: 50px; /* Verminderd van 60px naar 50px */
+  height: 50px; /* Verminderd van 60px naar 50px */
+  background-color: #fff;
+  border: 3px solid #d3eaff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px; /* Verminderd van 10px naar 5px */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.rating-circle:hover {
+  background-color: #a0c4ff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.rate-text {
+  font-size: 0.9em; /* Verminderd voor betere pasvorm */
+  color: #333;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 3px; /* Verminderd van 5px naar 3px */
+}
+
+.rating-button {
+  background-color: #d3eaff;
+  border: 3px solid #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px; /* Verminderd van 50px naar 40px */
+  height: 40px; /* Verminderd van 50px naar 40px */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.1s, border-color 0.3s, background-color 0.3s;
+  display: none; /* Aanvankelijk verborgen */
+}
+
+.rating-button:hover {
+  background-color: #a0c4ff;
+  border-color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.rating-button.selected::before {
+  content: '👍';
+  position: absolute;
+  font-size: 1.2em; /* Verminderd voor betere pasvorm */
+  color: #333;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rating-button:active {
+  transform: scale(1.1);
+}
+
+/* Dragging Clone Stijlen */
+.dragging-clone {
+  opacity: 0.8;
+  pointer-events: none;
+  transform: scale(1.15);
+  transition: transform 0.15s ease;
+}
+
+/* Responsieve Stijlen */
+@media (max-width: 480px) {
+  .emoji-item,
+  .emoji-placeholder,
+  .rating-button {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+
+  .rating-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+  .rate-text {
+    font-size: 0.8em;
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon-button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  #live-time {
+    font-size: 0.9em;
+  }
+
+  main {
+    padding-top: 180px; /* Nog meer verminderde padding voor betere pasvorm */
+  }
+}
